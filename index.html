@@ -12,7 +12,6 @@
   <style>
     :root {
       --bege:         #e8d4a8;
-      --bege-claro:   #f5e9cc;
       --marrom:       #3a2310;
       --marrom-medio: #6b4423;
       --dourado:      #b8893a;
@@ -24,35 +23,35 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--bege);
       color: var(--texto);
       font-family: "Inter", sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
+      /* usa o fundo enviado */
+      background-image: url("fundo_site.png");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
+    /* camada de cor por cima do fundo, bem suave */
     body::before {
-      content: "εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον";
+      content: "";
       position: fixed;
       inset: 0;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      color: rgba(90,55,20,0.08);
-      word-break: break-all;
-      line-height: 2.2;
-      padding: 20px;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.3), rgba(0,0,0,0.1));
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
     }
 
+    /* ── HERO ── */
     .hero {
       position: relative;
       z-index: 1;
       text-align: center;
       padding: 56px 24px 40px;
-      background: linear-gradient(180deg, rgba(245,233,204,0.96) 0%, rgba(232,212,168,0.85) 100%);
+      background: linear-gradient(180deg, rgba(245,233,204,0.94) 0%, rgba(232,212,168,0.85) 100%);
       border-bottom: 1px solid rgba(184,137,58,0.35);
     }
 
@@ -108,6 +107,7 @@
 
     .icone-chama { font-size: 2rem; margin-bottom: 20px; display: block; }
 
+    /* ── MAIN ── */
     main {
       position: relative;
       z-index: 1;
@@ -117,7 +117,7 @@
     }
 
     .aviso {
-      background: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.7);
       border: 1px solid rgba(184,137,58,0.45);
       border-radius: 14px;
       padding: 13px 16px;
@@ -128,6 +128,7 @@
       text-align: center;
     }
 
+    /* ── TABS (cronograma) ── */
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -140,7 +141,7 @@
       padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid rgba(107,68,35,0.35);
-      background: rgba(245,233,204,0.6);
+      background: rgba(245,233,204,0.85);
       cursor: pointer;
       transition: all 0.18s ease;
       text-align: left;
@@ -148,8 +149,9 @@
     }
 
     .tab:hover {
-      background: rgba(245,233,204,0.9);
+      background: rgba(245,233,204,1);
       border-color: var(--dourado);
+      transform: translateY(-1px);
     }
 
     .tab .tab-label {
@@ -174,15 +176,16 @@
       background: linear-gradient(135deg, #f9e4a8, var(--dourado));
       border-color: var(--marrom-medio);
       box-shadow: 0 4px 14px rgba(100,60,20,0.28), 0 0 0 1px rgba(255,255,255,0.5);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .tab.active .tab-label { color: rgba(42,20,4,0.7); }
     .tab.active .tab-nome  { color: var(--marrom); }
 
+    /* ── PAINEL DE CONTEÚDO ── */
     .conteudo-dia {
       display: none;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.85);
       border-radius: 18px;
       border: 1px solid rgba(184,137,58,0.5);
       padding: 22px 18px 24px;
@@ -224,6 +227,7 @@
       margin: 12px 0 16px;
     }
 
+    /* ── BLOCOS ── */
     .blocos {
       display: grid;
       grid-template-columns: 1fr;
@@ -273,6 +277,7 @@
       color: var(--marrom);
     }
 
+    /* LINKS DE ARQUIVOS */
     .arquivo-item {
       display: flex;
       align-items: center;
@@ -290,7 +295,7 @@
     .arquivo-item:last-child { margin-bottom: 0; }
 
     .arquivo-item:hover {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       transform: translateX(3px);
       border-color: var(--dourado);
     }
@@ -315,6 +320,7 @@
 
     .arquivo-seta { font-size: 0.8rem; color: var(--dourado); }
 
+    /* ── EM BREVE ── */
     .em-breve-bloco {
       text-align: center;
       padding: 28px 16px;
@@ -381,10 +387,125 @@
       Materiais exclusivos para participantes · Acesse durante e após as ministrações
     </div>
 
+    <!-- CRONOGRAMA / TABS -->
     <div class="tabs">
       <button class="tab active" data-target="dia1">
         <div class="tab-label">Dia 1</div>
         <div class="tab-nome">09 de Abril</div>
       </button>
-      <button class="tab" data-target="dia
+      <button class="tab" data-target="dia2">
+        <div class="tab-label">Dia 2</div>
+        <div class="tab-nome">10 de Abril</div>
+      </button>
+      <button class="tab" data-target="dia3">
+        <div class="tab-label">Dia 3</div>
+        <div class="tab-nome">11 de Abril</div>
+      </button>
+      <button class="tab" data-target="dia4">
+        <div class="tab-label">Dia 4</div>
+        <div class="tab-nome">12 de Abril</div>
+      </button>
+    </div>
 
+    <!-- DIA 1 – terá arquivo ainda hoje -->
+    <section id="dia1" class="conteudo-dia active">
+      <div class="dia-titulo">Dia 1</div>
+      <div class="dia-tema">09 de Abril</div>
+      <div class="divisor"></div>
+
+      <div class="blocos">
+        <div class="bloco">
+          <div class="bloco-header">
+            <div class="bloco-icone pdf">📄</div>
+            <div class="bloco-titulo">Esboços & PDFs</div>
+          </div>
+
+          <!-- TROCAR O href QUANDO VOCÊ SUBIR O ARQUIVO DE DIA 1 -->
+          <a class="arquivo-item" href="arquivos/dia1-esboco.pdf" target="_blank">
+            <span class="arquivo-badge pdf">PDF</span>
+            <span class="arquivo-nome">Esboço – Dia 1</span>
+            <span class="arquivo-seta">↗</span>
+          </a>
+        </div>
+
+        <div class="bloco">
+          <div class="bloco-header">
+            <div class="bloco-icone audio">🎧</div>
+            <div class="bloco-titulo">Áudios</div>
+          </div>
+          <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIA 2 – em breve -->
+    <section id="dia2" class="conteudo-dia">
+      <div class="dia-titulo">Dia 2</div>
+      <div class="dia-tema">10 de Abril</div>
+      <div class="divisor"></div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 2 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIA 3 – em breve -->
+    <section id="dia3" class="conteudo-dia">
+      <div class="dia-titulo">Dia 3</div>
+      <div class="dia-tema">11 de Abril</div>
+      <div class="divisor"></div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 3 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIA 4 – em breve -->
+    <section id="dia4" class="conteudo-dia">
+      <div class="dia-titulo">Dia 4</div>
+      <div class="dia-tema">12 de Abril</div>
+      <div class="divisor"></div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 4 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="ano"></span> · Conferência do Evangelho · Materiais para participantes
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const dias  = document.querySelectorAll(".conteudo-dia");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const alvo = tab.dataset.target;
+
+        tabs.forEach(t => t.classList.remove("active"));
+        dias.forEach(d => d.classList.remove("active"));
+
+        tab.classList.add("active");
+        const painel = document.getElementById(alvo);
+        if (painel) painel.classList.add("active");
+      });
+    });
+
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
