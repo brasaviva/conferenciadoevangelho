@@ -10,23 +10,18 @@
 
   <style>
     :root {
-      --bege:     #e8d4a8;
-      --bege-claro: #f5e9cc;
+      --bege:        #e8d4a8;
+      --bege-claro:  #f5e9cc;
       --bege-escuro: #c9aa72;
-      --marrom:   #3a2310;
-      --marrom-medio: #6b4423;
-      --dourado:  #b8893a;
-      --dourado-claro: #d4a85a;
-      --texto:    #2c1a0a;
-      --muted:    #7a5530;
+      --marrom:      #3a2310;
+      --marrom-medio:#6b4423;
+      --dourado:     #b8893a;
+      --dourado-claro:#d4a85a;
+      --texto:       #2c1a0a;
+      --muted:       #7a5530;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -37,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* ── FUNDO GREGO ── */
     body::before {
       content: "εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον";
       position: fixed;
@@ -45,7 +39,7 @@
       font-family: "Cormorant Garamond", serif;
       font-size: 1.3rem;
       font-style: italic;
-      color: rgba(90, 55, 20, 0.08);
+      color: rgba(90,55,20,0.08);
       word-break: break-all;
       line-height: 2.2;
       padding: 20px;
@@ -64,24 +58,7 @@
       border-bottom: 1px solid rgba(184,137,58,0.35);
     }
 
-    .hero-data {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem;
-      font-style: italic;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--marrom-medio);
-      margin-bottom: 6px;
-    }
-
-    .hero-pastores {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 28px;
-      letter-spacing: 0.04em;
-    }
+    /* removido data e pastores */
 
     .hero-titulo-sup {
       font-family: "Cormorant Garamond", serif;
@@ -133,12 +110,7 @@
       color: var(--marrom);
     }
 
-    /* ── CHAMA / ÍCONE ── */
-    .icone-chama {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      display: block;
-    }
+    .icone-chama { font-size: 2rem; margin-bottom: 20px; display: block; }
 
     /* ── MAIN ── */
     main {
@@ -149,7 +121,6 @@
       padding: 32px 16px 48px;
     }
 
-    /* ── AVISO ── */
     .aviso {
       background: rgba(255,255,255,0.55);
       border: 1px solid rgba(184,137,58,0.45);
@@ -160,7 +131,6 @@
       margin-bottom: 24px;
       backdrop-filter: blur(6px);
       text-align: center;
-      font-family: "Inter", sans-serif;
     }
 
     /* ── TABS ── */
@@ -189,7 +159,6 @@
     }
 
     .tab .tab-label {
-      font-family: "Inter", sans-serif;
       font-size: 0.7rem;
       font-weight: 500;
       text-transform: uppercase;
@@ -212,15 +181,9 @@
       transform: translateY(-1px);
     }
 
-    .tab.active .tab-label {
-      color: rgba(42,20,4,0.7);
-    }
+    .tab.active .tab-label { color: rgba(42,20,4,0.7); }
+    .tab.active .tab-nome  { color: var(--marrom); }
 
-    .tab.active .tab-nome {
-      color: var(--marrom);
-    }
-
-    /* ── PAINEL DE DIA ── */
     .conteudo-dia {
       display: none;
       background: rgba(255,255,255,0.6);
@@ -265,7 +228,6 @@
       margin: 12px 0 16px;
     }
 
-    /* ── GRID DE BLOCOS ── */
     .blocos {
       display: grid;
       grid-template-columns: 1fr;
@@ -276,7 +238,6 @@
       .blocos { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ── BLOCO (PDF / ÁUDIO) ── */
     .bloco {
       background: linear-gradient(145deg, #fdf5e0, #f5e6c0);
       border: 1px solid rgba(160,110,50,0.45);
@@ -304,11 +265,10 @@
       box-shadow: 0 2px 6px rgba(60,35,16,0.25);
     }
 
-    .bloco-icone.pdf  { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .bloco-icone.pdf   { background: linear-gradient(135deg, #c0392b, #e74c3c); }
     .bloco-icone.audio { background: linear-gradient(135deg, #5a2d82, #8e44ad); }
 
     .bloco-titulo {
-      font-family: "Inter", sans-serif;
       font-size: 0.82rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -316,7 +276,6 @@
       color: var(--marrom);
     }
 
-    /* ── ITENS DE ARQUIVO ── */
     .arquivo-item {
       display: flex;
       align-items: center;
@@ -340,7 +299,6 @@
     }
 
     .arquivo-badge {
-      font-family: "Inter", sans-serif;
       font-size: 0.62rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -353,28 +311,40 @@
     .arquivo-badge.audio { background: #f0e6f8; color: #7d3c98; }
 
     .arquivo-nome {
-      font-family: "Inter", sans-serif;
       font-size: 0.88rem;
-      font-weight: 400;
       color: var(--marrom);
       flex: 1;
     }
 
-    .arquivo-seta {
-      font-size: 0.8rem;
-      color: var(--dourado);
+    .arquivo-seta { font-size: 0.8rem; color: var(--dourado); }
+
+    .em-breve-bloco {
+      text-align: center;
+      padding: 28px 16px;
     }
 
-    /* placeholder "em breve" */
-    .em-breve {
-      font-family: "Inter", sans-serif;
+    .em-breve-icone {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+      opacity: 0.5;
+    }
+
+    .em-breve-titulo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--marrom);
+      margin-bottom: 4px;
+    }
+
+    .em-breve-sub {
       font-size: 0.82rem;
       color: var(--muted);
       font-style: italic;
-      padding: 6px 2px;
+      line-height: 1.5;
     }
 
-    /* ── FOOTER ── */
     footer {
       position: relative;
       z-index: 1;
@@ -395,13 +365,8 @@
 </head>
 <body>
 
-  <!-- ══ HERO ══ -->
   <div class="hero">
-    <div class="hero-data">09 a 12 de Abril</div>
-    <div class="hero-pastores">
-      Pastor Herso Meus &nbsp;|&nbsp; Pastor Aroní Padilha &nbsp;|&nbsp; Pastor Paulo Duarte
-    </div>
-
+    <!-- TÍTULO AJUSTADO -->
     <div class="hero-titulo-sup">Conferência do</div>
     <div class="hero-titulo-principal">Evangelho</div>
 
@@ -418,13 +383,11 @@
     </div>
   </div>
 
-  <!-- ══ CONTEÚDOS ══ -->
   <main>
     <div class="aviso">
       Materiais exclusivos para participantes · Acesse durante e após as ministrações
     </div>
 
-    <!-- Abas -->
     <div class="tabs">
       <button class="tab active" data-target="dia1">
         <div class="tab-label">Dia 1</div>
@@ -444,10 +407,10 @@
       </button>
     </div>
 
-    <!-- ── DIA 1 ── -->
+    <!-- DIA 1 -->
     <section id="dia1" class="conteudo-dia active">
       <div class="dia-titulo">Dia 1</div>
-      <div class="dia-tema">Tema — 09 de Abril</div>
+      <div class="dia-tema">09 de Abril</div>
       <div class="divisor"></div>
 
       <div class="blocos">
@@ -456,13 +419,13 @@
             <div class="bloco-icone pdf">📄</div>
             <div class="bloco-titulo">Esboços & PDFs</div>
           </div>
-          <!-- ADICIONE SEUS PDFs AQUI -->
+
+          <!-- exemplo de arquivo - troque o href quando tiver o PDF -->
           <a class="arquivo-item" href="arquivos/dia1-esboco.pdf" target="_blank">
             <span class="arquivo-badge pdf">PDF</span>
             <span class="arquivo-nome">Esboço – Dia 1</span>
             <span class="arquivo-seta">↗</span>
           </a>
-          <!-- Duplicar o bloco acima para adicionar mais PDFs -->
         </div>
 
         <div class="bloco">
@@ -470,7 +433,8 @@
             <div class="bloco-icone audio">🎧</div>
             <div class="bloco-titulo">Áudios</div>
           </div>
-          <!-- ADICIONE SEUS ÁUDIOS AQUI -->
+
+          <!-- exemplo de arquivo - troque o href quando tiver o áudio -->
           <a class="arquivo-item" href="audios/dia1-mensagem.mp3" target="_blank">
             <span class="arquivo-badge audio">ÁUD</span>
             <span class="arquivo-nome">Mensagem – Dia 1</span>
@@ -480,88 +444,60 @@
       </div>
     </section>
 
-    <!-- ── DIA 2 ── -->
+    <!-- DIA 2 -->
     <section id="dia2" class="conteudo-dia">
       <div class="dia-titulo">Dia 2</div>
-      <div class="dia-tema">Tema — 10 de Abril</div>
+      <div class="dia-tema">10 de Abril</div>
       <div class="divisor"></div>
 
-      <div class="blocos">
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-icone pdf">📄</div>
-            <div class="bloco-titulo">Esboços & PDFs</div>
-          </div>
-          <p class="em-breve">Materiais serão adicionados em breve.</p>
-        </div>
-
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-icone audio">🎧</div>
-            <div class="bloco-titulo">Áudios</div>
-          </div>
-          <p class="em-breve">Áudios serão adicionados em breve.</p>
-        </div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 2 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
       </div>
     </section>
 
-    <!-- ── DIA 3 ── -->
+    <!-- DIA 3 -->
     <section id="dia3" class="conteudo-dia">
       <div class="dia-titulo">Dia 3</div>
-      <div class="dia-tema">Tema — 11 de Abril</div>
+      <div class="dia-tema">11 de Abril</div>
       <div class="divisor"></div>
 
-      <div class="blocos">
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-icone pdf">📄</div>
-            <div class="bloco-titulo">Esboços & PDFs</div>
-          </div>
-          <p class="em-breve">Materiais serão adicionados em breve.</p>
-        </div>
-
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-icone audio">🎧</div>
-            <div class="bloco-titulo">Áudios</div>
-          </div>
-          <p class="em-breve">Áudios serão adicionados em breve.</p>
-        </div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 3 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
       </div>
     </section>
 
-    <!-- ── DIA 4 ── -->
+    <!-- DIA 4 -->
     <section id="dia4" class="conteudo-dia">
       <div class="dia-titulo">Dia 4</div>
-      <div class="dia-tema">Tema — 12 de Abril</div>
+      <div class="dia-tema">12 de Abril</div>
       <div class="divisor"></div>
 
-      <div class="blocos">
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-icone pdf">📄</div>
-            <div class="bloco-titulo">Esboços & PDFs</div>
-          </div>
-          <p class="em-breve">Materiais serão adicionados em breve.</p>
-        </div>
-
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-icone audio">🎧</div>
-            <div class="bloco-titulo">Áudios</div>
-          </div>
-          <p class="em-breve">Áudios serão adicionados em breve.</p>
-        </div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 4 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="ano"></span> &nbsp;·&nbsp; Conferência do Evangelho &nbsp;·&nbsp; Materiais para participantes
+    &copy; <span id="ano"></span> · Conferência do Evangelho · Materiais para participantes
   </footer>
 
   <script>
-    // Tabs
     const tabs = document.querySelectorAll(".tab");
     const dias  = document.querySelectorAll(".conteudo-dia");
 
