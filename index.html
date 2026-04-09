@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google" content="notranslate" />
-  <title>Conferencia do Evangelho</title>
+  <title>Conferência do Evangelho</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,12 +11,12 @@
 
   <style>
     :root {
-      --bege: #e8d4a8;
-      --marrom: #3a2310;
+      --bege:         #e8d4a8;
+      --marrom:       #3a2310;
       --marrom-medio: #6b4423;
-      --dourado: #b8893a;
-      --texto: #2c1a0a;
-      --muted: #7a5530;
+      --dourado:      #b8893a;
+      --texto:        #2c1a0a;
+      --muted:        #7a5530;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,6 +43,7 @@
       z-index: 0;
     }
 
+    /* ── HERO ── */
     .hero {
       position: relative;
       z-index: 1;
@@ -104,11 +105,15 @@
     }
 
     @media (max-width: 360px) {
-      .hero-tagline, .hero-grego { font-size: 1rem; }
+      .hero-tagline,
+      .hero-grego {
+        font-size: 1rem;
+      }
     }
 
     .icone-chama { font-size: 2rem; margin-bottom: 20px; display: block; }
 
+    /* ── MAIN ── */
     main {
       position: relative;
       z-index: 1;
@@ -129,6 +134,7 @@
       text-align: center;
     }
 
+    /* ── TABS ── */
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -180,8 +186,9 @@
     }
 
     .tab.active .tab-label { color: rgba(42,20,4,0.7); }
-    .tab.active .tab-nome { color: var(--marrom); }
+    .tab.active .tab-nome  { color: var(--marrom); }
 
+    /* ── PAINEL ── */
     .conteudo-dia {
       display: none;
       background: rgba(255,255,255,0.85);
@@ -199,7 +206,7 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .dia-titulo {
@@ -226,6 +233,7 @@
       margin: 12px 0 16px;
     }
 
+    /* ── BLOCOS ── */
     .blocos {
       display: grid;
       grid-template-columns: 1fr;
@@ -263,7 +271,7 @@
       box-shadow: 0 2px 6px rgba(60,35,16,0.25);
     }
 
-    .bloco-icone.pdf { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .bloco-icone.pdf   { background: linear-gradient(135deg, #c0392b, #e74c3c); }
     .bloco-icone.audio { background: linear-gradient(135deg, #5a2d82, #8e44ad); }
 
     .bloco-titulo {
@@ -306,7 +314,7 @@
       flex-shrink: 0;
     }
 
-    .arquivo-badge.pdf { background: #fde8e8; color: #c0392b; }
+    .arquivo-badge.pdf   { background: #fde8e8; color: #c0392b; }
     .arquivo-badge.audio { background: #f0e6f8; color: #7d3c98; }
 
     .arquivo-nome {
@@ -317,6 +325,7 @@
 
     .arquivo-seta { font-size: 0.8rem; color: var(--dourado); }
 
+    /* ── EM BREVE ── */
     .em-breve-bloco {
       text-align: center;
       padding: 28px 16px;
@@ -357,24 +366,24 @@
 
     @media (min-width: 720px) {
       .hero { padding: 64px 24px 48px; }
-      main { padding: 36px 20px 56px; }
-      .tab { flex: 1 1 calc(25% - 6px); }
+      main  { padding: 36px 20px 56px; }
+      .tab  { flex: 1 1 calc(25% - 6px); }
     }
   </style>
 </head>
 <body>
 
   <div class="hero">
-    <div class="hero-titulo-sup" translate="no">Conferencia do</div>
+    <div class="hero-titulo-sup" translate="no">Conferência do</div>
     <div class="hero-titulo-principal" translate="no">Evangelho</div>
     <p class="hero-tagline">
-      Confrontando as crencas erradas que distorcem a fe<br />
+      Confrontando as crenças erradas que distorcem a fé<br />
       e desviam o foco de Cristo na igreja atual.
     </p>
-    <span class="icone-chama">&#128293;</span>
+    <span class="icone-chama">🔥</span>
     <div class="hero-grego" translate="no">
-      <strong>euangelion</strong>
-      <em>Euangelion</em> &#8212; palavra grega que significa &#8220;boa noticia&#8221; ou &#8220;boas novas&#8221;
+      <strong>ευαγγελιον</strong>
+      <em>Euangelion</em> — palavra grega que significa "boa notícia" ou "boas novas"
     </div>
   </div>
 
@@ -402,6 +411,7 @@
       </button>
     </div>
 
+    <!-- DIA 1 -->
     <section id="dia1" class="conteudo-dia active">
       <div class="dia-titulo">Dia 1</div>
       <div class="dia-tema">09 de Abril</div>
@@ -409,79 +419,82 @@
       <div class="blocos">
         <div class="bloco">
           <div class="bloco-header">
-            <div class="bloco-icone pdf">&#128196;</div>
-            <div class="bloco-titulo">Esboco das mensagens</div>
+            <div class="bloco-icone pdf">📄</div>
+            <div class="bloco-titulo">Esboços das mensagens</div>
           </div>
           <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
         </div>
         <div class="bloco">
           <div class="bloco-header">
-            <div class="bloco-icone audio">&#127911;</div>
-            <div class="bloco-titulo">Audio das mensagens</div>
+            <div class="bloco-icone audio">🎧</div>
+            <div class="bloco-titulo">Áudio das mensagens</div>
           </div>
           <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
         </div>
       </div>
     </section>
 
+    <!-- DIA 2 -->
     <section id="dia2" class="conteudo-dia">
       <div class="dia-titulo">Dia 2</div>
       <div class="dia-tema">10 de Abril</div>
       <div class="divisor"></div>
       <div class="em-breve-bloco">
-        <span class="em-breve-icone">&#9203;</span>
+        <span class="em-breve-icone">⏳</span>
         <div class="em-breve-titulo">Materiais em breve</div>
         <p class="em-breve-sub">
-          Os PDFs e audios do Dia 2 serao disponibilizados<br />
-          apos a realizacao do evento.
+          Os PDFs e áudios do Dia 2 serão disponibilizados<br />
+          após a realização do evento.
         </p>
       </div>
     </section>
 
+    <!-- DIA 3 -->
     <section id="dia3" class="conteudo-dia">
       <div class="dia-titulo">Dia 3</div>
       <div class="dia-tema">11 de Abril</div>
       <div class="divisor"></div>
       <div class="em-breve-bloco">
-        <span class="em-breve-icone">&#9203;</span>
+        <span class="em-breve-icone">⏳</span>
         <div class="em-breve-titulo">Materiais em breve</div>
         <p class="em-breve-sub">
-          Os PDFs e audios do Dia 3 serao disponibilizados<br />
-          apos a realizacao do evento.
+          Os PDFs e áudios do Dia 3 serão disponibilizados<br />
+          após a realização do evento.
         </p>
       </div>
     </section>
 
+    <!-- DIA 4 -->
     <section id="dia4" class="conteudo-dia">
       <div class="dia-titulo">Dia 4</div>
       <div class="dia-tema">12 de Abril</div>
       <div class="divisor"></div>
       <div class="em-breve-bloco">
-        <span class="em-breve-icone">&#9203;</span>
+        <span class="em-breve-icone">⏳</span>
         <div class="em-breve-titulo">Materiais em breve</div>
         <p class="em-breve-sub">
-          Os PDFs e audios do Dia 4 serao disponibilizados<br />
-          apos a realizacao do evento.
+          Os PDFs e áudios do Dia 4 serão disponibilizados<br />
+          após a realização do evento.
         </p>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="ano"></span> &#183; Conferencia do Evangelho &#183; Materiais para participantes
+    &copy; <span id="ano"></span> · Conferência do Evangelho · Materiais para participantes
   </footer>
 
   <script>
     const tabs = document.querySelectorAll(".tab");
-    const dias = document.querySelectorAll(".conteudo-dia");
+    const dias  = document.querySelectorAll(".conteudo-dia");
 
-    tabs.forEach(function(tab) {
-      tab.addEventListener("click", function() {
-        var alvo = tab.getAttribute("data-target");
-        tabs.forEach(function(t) { t.classList.remove("active"); });
-        dias.forEach(function(d) { d.classList.remove("active"); });
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const alvo = tab.dataset.target;
+        tabs.forEach(t => t.classList.remove("active"));
+        dias.forEach(d => d.classList.remove("active"));
         tab.classList.add("active");
-        var painel = document.getElementById(alvo);
+        const painel = document.getElementById(alvo);
         if (painel) painel.classList.add("active");
       });
     });
