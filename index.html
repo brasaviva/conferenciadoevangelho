@@ -242,5 +242,257 @@
       border: 1px solid rgba(160,110,50,0.45);
       border-radius: 14px;
       padding: 14px 13px 16px;
-      box-shadow: 0 2
+      box-shadow: 0 2px 10px rgba(80,48,18,0.1);
+    }
 
+    .bloco-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .bloco-icone {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(60,35,16,0.25);
+    }
+
+    .bloco-icone.pdf   { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .bloco-icone.audio { background: linear-gradient(135deg, #5a2d82, #8e44ad); }
+
+    .bloco-titulo {
+      font-family: "Inter", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--marrom);
+    }
+
+    .arquivo-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(184,137,58,0.3);
+      margin-bottom: 6px;
+      transition: background 0.15s, transform 0.12s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .arquivo-item:last-child { margin-bottom: 0; }
+
+    .arquivo-item:hover {
+      background: rgba(255,255,255,0.95);
+      transform: translateX(3px);
+      border-color: var(--dourado);
+    }
+
+    .arquivo-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 6px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .arquivo-badge.pdf   { background: #fde8e8; color: #c0392b; }
+    .arquivo-badge.audio { background: #f0e6f8; color: #7d3c98; }
+
+    .arquivo-nome {
+      font-size: 0.88rem;
+      color: var(--marrom);
+      flex: 1;
+    }
+
+    .arquivo-seta { font-size: 0.8rem; color: var(--dourado); }
+
+    /* ── EM BREVE ── */
+    .em-breve-bloco {
+      text-align: center;
+      padding: 28px 16px;
+    }
+
+    .em-breve-icone {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+      opacity: 0.5;
+    }
+
+    .em-breve-titulo {
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--marrom);
+      margin-bottom: 4px;
+    }
+
+    .em-breve-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 16px 32px;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (min-width: 720px) {
+      .hero { padding: 64px 24px 48px; }
+      main  { padding: 36px 20px 56px; }
+      .tab  { flex: 1 1 calc(25% - 6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-titulo-sup" translate="no">Conferência do</div>
+    <div class="hero-titulo-principal" translate="no">Evangelho</div>
+    <p class="hero-tagline">
+      Confrontando as crenças erradas que distorcem a fé<br />
+      e desviam o foco de Cristo na igreja atual.
+    </p>
+    <span class="icone-chama">🔥</span>
+    <div class="hero-grego" translate="no">
+      <strong>ευαγγελιον</strong>
+      <em>Euangelion</em> — palavra grega que significa "boa notícia" ou "boas novas"
+    </div>
+  </div>
+
+  <main>
+    <div class="aviso">
+      Acesse os materiais do evento
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-target="dia1">
+        <div class="tab-label">Dia 1</div>
+        <div class="tab-nome">09 de Abril</div>
+      </button>
+      <button class="tab" data-target="dia2">
+        <div class="tab-label">Dia 2</div>
+        <div class="tab-nome">10 de Abril</div>
+      </button>
+      <button class="tab" data-target="dia3">
+        <div class="tab-label">Dia 3</div>
+        <div class="tab-nome">11 de Abril</div>
+      </button>
+      <button class="tab" data-target="dia4">
+        <div class="tab-label">Dia 4</div>
+        <div class="tab-nome">12 de Abril</div>
+      </button>
+    </div>
+
+    <!-- DIA 1 -->
+    <section id="dia1" class="conteudo-dia active">
+      <div class="dia-titulo">Dia 1</div>
+      <div class="dia-tema">09 de Abril</div>
+      <div class="divisor"></div>
+      <div class="blocos">
+        <div class="bloco">
+          <div class="bloco-header">
+            <div class="bloco-icone pdf">📄</div>
+            <div class="bloco-titulo">Esboços das mensagens</div>
+          </div>
+          <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
+        </div>
+        <div class="bloco">
+          <div class="bloco-header">
+            <div class="bloco-icone audio">🎧</div>
+            <div class="bloco-titulo">Áudio das mensagens</div>
+          </div>
+          <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIA 2 -->
+    <section id="dia2" class="conteudo-dia">
+      <div class="dia-titulo">Dia 2</div>
+      <div class="dia-tema">10 de Abril</div>
+      <div class="divisor"></div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 2 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIA 3 -->
+    <section id="dia3" class="conteudo-dia">
+      <div class="dia-titulo">Dia 3</div>
+      <div class="dia-tema">11 de Abril</div>
+      <div class="divisor"></div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 3 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIA 4 -->
+    <section id="dia4" class="conteudo-dia">
+      <div class="dia-titulo">Dia 4</div>
+      <div class="dia-tema">12 de Abril</div>
+      <div class="divisor"></div>
+      <div class="em-breve-bloco">
+        <span class="em-breve-icone">⏳</span>
+        <div class="em-breve-titulo">Materiais em breve</div>
+        <p class="em-breve-sub">
+          Os PDFs e áudios do Dia 4 serão disponibilizados<br />
+          após a realização do evento.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="ano"></span> · Conferência do Evangelho · Materiais para participantes
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const dias  = document.querySelectorAll(".conteudo-dia");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const alvo = tab.dataset.target;
+        tabs.forEach(t => t.classList.remove("active"));
+        dias.forEach(d => d.classList.remove("active"));
+        tab.classList.add("active");
+        const painel = document.getElementById(alvo);
+        if (painel) painel.classList.add("active");
+      });
+    });
+
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
