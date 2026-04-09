@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-BR" translate="no">
 <head>
   <meta charset="UTF-8" />
+  <meta name="google" content="notranslate" />
   <title>Conferência do Evangelho</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bege:        #e8d4a8;
-      --bege-claro:  #f5e9cc;
-      --bege-escuro: #c9aa72;
-      --marrom:      #3a2310;
-      --marrom-medio:#6b4423;
-      --dourado:     #b8893a;
-      --dourado-claro:#d4a85a;
-      --texto:       #2c1a0a;
-      --muted:       #7a5530;
+      --bege:         #e8d4a8;
+      --bege-claro:   #f5e9cc;
+      --marrom:       #3a2310;
+      --marrom-medio: #6b4423;
+      --dourado:      #b8893a;
+      --texto:        #2c1a0a;
+      --muted:        #7a5530;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,8 +31,9 @@
       overflow-x: hidden;
     }
 
+    /* fundo grego */
     body::before {
-      content: "εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον";
+      content: "εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον εὐαγγέλιον";
       position: fixed;
       inset: 0;
       font-family: "Cormorant Garamond", serif;
@@ -57,8 +57,6 @@
       background: linear-gradient(180deg, rgba(245,233,204,0.96) 0%, rgba(232,212,168,0.85) 100%);
       border-bottom: 1px solid rgba(184,137,58,0.35);
     }
-
-    /* removido data e pastores */
 
     .hero-titulo-sup {
       font-family: "Cormorant Garamond", serif;
@@ -159,6 +157,7 @@
     }
 
     .tab .tab-label {
+      font-family: "Inter", sans-serif;
       font-size: 0.7rem;
       font-weight: 500;
       text-transform: uppercase;
@@ -167,11 +166,13 @@
       margin-bottom: 2px;
     }
 
+    /* ── FONTE DOS DIAS: sem serifa, negrito ── */
     .tab .tab-nome {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1rem;
-      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
       color: var(--marrom);
+      letter-spacing: 0.01em;
     }
 
     .tab.active {
@@ -184,6 +185,7 @@
     .tab.active .tab-label { color: rgba(42,20,4,0.7); }
     .tab.active .tab-nome  { color: var(--marrom); }
 
+    /* ── PAINEL ── */
     .conteudo-dia {
       display: none;
       background: rgba(255,255,255,0.6);
@@ -204,20 +206,21 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── TÍTULO DENTRO DO PAINEL: sem serifa, negrito ── */
     .dia-titulo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-family: "Inter", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--marrom);
       margin-bottom: 2px;
     }
 
     .dia-tema {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1rem;
-      font-style: italic;
+      font-family: "Inter", sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
       color: var(--muted);
       margin-bottom: 14px;
     }
@@ -228,6 +231,7 @@
       margin: 12px 0 16px;
     }
 
+    /* ── BLOCOS ── */
     .blocos {
       display: grid;
       grid-template-columns: 1fr;
@@ -269,8 +273,9 @@
     .bloco-icone.audio { background: linear-gradient(135deg, #5a2d82, #8e44ad); }
 
     .bloco-titulo {
+      font-family: "Inter", sans-serif;
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--marrom);
@@ -318,6 +323,7 @@
 
     .arquivo-seta { font-size: 0.8rem; color: var(--dourado); }
 
+    /* ── EM BREVE ── */
     .em-breve-bloco {
       text-align: center;
       padding: 28px 16px;
@@ -331,9 +337,9 @@
     }
 
     .em-breve-titulo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
       color: var(--marrom);
       margin-bottom: 4px;
     }
@@ -345,6 +351,7 @@
       line-height: 1.5;
     }
 
+    /* ── FOOTER ── */
     footer {
       position: relative;
       z-index: 1;
@@ -366,9 +373,8 @@
 <body>
 
   <div class="hero">
-    <!-- TÍTULO AJUSTADO -->
-    <div class="hero-titulo-sup">Conferência do</div>
-    <div class="hero-titulo-principal">Evangelho</div>
+    <div class="hero-titulo-sup" translate="no">Conferência do</div>
+    <div class="hero-titulo-principal" translate="no">Evangelho</div>
 
     <p class="hero-tagline">
       Confrontando as crenças erradas que distorcem a fé<br />
@@ -377,7 +383,7 @@
 
     <span class="icone-chama">🔥</span>
 
-    <div class="hero-grego">
+    <div class="hero-grego" translate="no">
       <strong>ευαγγελιον</strong>
       <em>Euangelion</em> — palavra grega que significa "boa notícia" ou "boas novas"
     </div>
@@ -407,7 +413,7 @@
       </button>
     </div>
 
-    <!-- DIA 1 -->
+    <!-- DIA 1 — sem arquivos por enquanto -->
     <section id="dia1" class="conteudo-dia active">
       <div class="dia-titulo">Dia 1</div>
       <div class="dia-tema">09 de Abril</div>
@@ -419,13 +425,7 @@
             <div class="bloco-icone pdf">📄</div>
             <div class="bloco-titulo">Esboços & PDFs</div>
           </div>
-
-          <!-- exemplo de arquivo - troque o href quando tiver o PDF -->
-          <a class="arquivo-item" href="arquivos/dia1-esboco.pdf" target="_blank">
-            <span class="arquivo-badge pdf">PDF</span>
-            <span class="arquivo-nome">Esboço – Dia 1</span>
-            <span class="arquivo-seta">↗</span>
-          </a>
+          <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
         </div>
 
         <div class="bloco">
@@ -433,13 +433,7 @@
             <div class="bloco-icone audio">🎧</div>
             <div class="bloco-titulo">Áudios</div>
           </div>
-
-          <!-- exemplo de arquivo - troque o href quando tiver o áudio -->
-          <a class="arquivo-item" href="audios/dia1-mensagem.mp3" target="_blank">
-            <span class="arquivo-badge audio">ÁUD</span>
-            <span class="arquivo-nome">Mensagem – Dia 1</span>
-            <span class="arquivo-seta">↗</span>
-          </a>
+          <p class="em-breve-sub" style="padding: 6px 2px;">Em breve.</p>
         </div>
       </div>
     </section>
@@ -449,7 +443,6 @@
       <div class="dia-titulo">Dia 2</div>
       <div class="dia-tema">10 de Abril</div>
       <div class="divisor"></div>
-
       <div class="em-breve-bloco">
         <span class="em-breve-icone">⏳</span>
         <div class="em-breve-titulo">Materiais em breve</div>
@@ -465,7 +458,6 @@
       <div class="dia-titulo">Dia 3</div>
       <div class="dia-tema">11 de Abril</div>
       <div class="divisor"></div>
-
       <div class="em-breve-bloco">
         <span class="em-breve-icone">⏳</span>
         <div class="em-breve-titulo">Materiais em breve</div>
@@ -481,7 +473,6 @@
       <div class="dia-titulo">Dia 4</div>
       <div class="dia-tema">12 de Abril</div>
       <div class="divisor"></div>
-
       <div class="em-breve-bloco">
         <span class="em-breve-icone">⏳</span>
         <div class="em-breve-titulo">Materiais em breve</div>
