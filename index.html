@@ -43,6 +43,47 @@
       z-index: 0;
     }
 
+    /* ── BOAS VINDAS ── */
+    .boas-vindas {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(58,35,16,0.97), rgba(107,68,35,0.95));
+      color: #f5e9cc;
+      text-align: center;
+      padding: 28px 24px;
+      border-bottom: 2px solid var(--dourado);
+    }
+
+    .boas-vindas-texto {
+      max-width: 680px;
+      margin: 0 auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1rem, 2.6vw, 1.25rem);
+      font-style: italic;
+      line-height: 1.8;
+      color: #f5e9cc;
+    }
+
+    .boas-vindas-texto strong {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.1rem);
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 12px;
+    }
+
+    .boas-vindas-texto p {
+      margin-bottom: 10px;
+    }
+
+    .boas-vindas-texto p:last-child {
+      margin-bottom: 0;
+    }
+
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -106,9 +147,7 @@
 
     @media (max-width: 360px) {
       .hero-tagline,
-      .hero-grego {
-        font-size: 1rem;
-      }
+      .hero-grego { font-size: 1rem; }
     }
 
     .icone-chama { font-size: 2rem; margin-bottom: 20px; display: block; }
@@ -233,7 +272,6 @@
       margin: 12px 0 16px;
     }
 
-    /* ── BLOCOS ── */
     .blocos {
       display: grid;
       grid-template-columns: 1fr;
@@ -325,7 +363,6 @@
 
     .arquivo-seta { font-size: 0.8rem; color: var(--dourado); }
 
-    /* ── EM BREVE ── */
     .em-breve-bloco {
       text-align: center;
       padding: 28px 16px;
@@ -373,6 +410,17 @@
 </head>
 <body>
 
+  <!-- BOAS VINDAS -->
+  <div class="boas-vindas">
+    <div class="boas-vindas-texto">
+      <strong>Seja bem-vindo!</strong>
+      <p>Aproveite esses dias para mergulhar na boa notícia de Cristo. Ele pagou o preço para anunciar essa mensagem. Hoje você pode viver aquilo que Ele conquistou para você.</p>
+      <p>Atente-se ao máximo, não perca nada!</p>
+      <p>Use o material para aprofundar seu conhecimento, faça anotações, escreva o que Deus falou com você.</p>
+    </div>
+  </div>
+
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-titulo-sup" translate="no">Conferência do</div>
     <div class="hero-titulo-principal" translate="no">Evangelho</div>
